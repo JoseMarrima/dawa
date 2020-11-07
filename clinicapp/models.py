@@ -21,7 +21,7 @@ class Exam(models.Model):
         # add self.exam_url_template
         url_to_new_link = "https://dawa.herokuapp.com/{}".format(self.id)
         qrcode_img = qrcode.make(url_to_new_link)
-        canvas = Image.new('RGB', (290, 290), 'white')
+        canvas = Image.new('RGB', (450, 450), 'white')
         canvas.paste(qrcode_img)
         fname = f'qr_code-{self.id}.png'
         buffer = BytesIO()
