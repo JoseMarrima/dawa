@@ -19,7 +19,7 @@ class Exam(models.Model):
 
     def save(self, *args, **kwargs):
         # add self.exam_url_template
-        url_to_new_link = "https://dawa.herokuapp.com/".format(self.id)
+        url_to_new_link = "https://dawa.herokuapp.com/{}".format(self.id)
         qrcode_img = qrcode.make(url_to_new_link)
         canvas = Image.new('RGB', (290, 290), 'white')
         canvas.paste(qrcode_img)
