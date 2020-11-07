@@ -1,0 +1,1 @@
+web: gunicorn dawa.wsgi --log-file -
